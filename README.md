@@ -243,4 +243,59 @@ function HashWord(Word) {
 }
 ```
 
-flowchart TD A([Inicio]) --> B[Ingresar palabras y pistas] B --> C{¿Palabra = FIN?} C -- No --> D[Guardar palabra y pista] D --> B C -- Sí --> E[Ordenar palabras de mayor a menor según su longitud] E --> F[Crear tablero vacío] F --> G[Tomar la primera palabra] G --> H[Colocar primera palabra horizontalmente en el centro] H --> I[Tomar siguiente palabra] I --> J[Buscar letras que coincidan con palabras colocadas] J --> K{¿Existe una letra coincidente?} K -- No --> L[Probar siguiente coincidencia] L --> J K -- Sí --> M[Probar posición perpendicular] M --> N{¿La posición es válida?} N -- No --> L N -- Sí --> O[Verificar que no salga del tablero] O --> P[Verificar que las letras coincidentes sean iguales] P --> Q[Verificar que no quede pegada incorrectamente a otras palabras] Q --> R{¿Cumple todas las condiciones?} R -- No --> L R -- Sí --> S[Contar intersecciones] S --> T{¿Tiene más intersecciones que la mejor posición?} T -- Sí --> U[Guardar posición como la mejor] T -- No --> V[Probar siguiente posición] U --> V V --> W{¿Hay más posiciones posibles?} W -- Sí --> J W -- No --> X{¿Existe una mejor posición?} X -- Sí --> Y[Colocar palabra en el tablero] X -- No --> Z[Continuar con la siguiente palabra] Y --> Z Z --> AA{¿Hay más palabras?} AA -- Sí --> I AA -- No --> AB[Guardar palabras, pistas, posiciones y hash] AB --> AC[Generar archivo HTML interactivo] AC --> AD[Generar imagen con la solución] AD --> AE[Usuario introduce sus respuestas] AE --> AF[Calcular hash de la respuesta] AF --> AG{¿El hash coincide con AnswerHash?} AG -- Sí --> AH[Respuesta correcta] AG -- No --> AI[Marcar respuesta como incorrecta] AH --> AJ{¿Hay más respuestas por verificar?} AI --> AJ AJ -- Sí --> AE AJ -- No --> AK([Fin])
+```mermaid
+flowchart TD
+    A([Inicio]) --> B[Ingresar palabras y pistas]
+    B --> C{¿La palabra es FIN?}
+
+    C -->|No| D[Guardar palabra y pista]
+    D --> B
+
+    C -->|Sí| E[Ordenar palabras de mayor a menor longitud]
+    E --> F[Crear tablero vacío]
+    F --> G[Colocar la primera palabra horizontalmente en el centro]
+
+    G --> H{¿Quedan palabras por colocar?}
+
+    H -->|No| N[Generar crucigrama HTML]
+    H -->|Sí| I[Buscar letras coincidentes con palabras colocadas]
+
+    I --> J[Probar posiciones y orientación perpendicular]
+    J --> K{¿La posición cumple las condiciones?}
+
+    K -->|No| I
+    K -->|Sí| L[Contar número de intersecciones]
+
+    L --> M{¿Tiene más intersecciones que la mejor posición?}
+
+    M -->|Sí| O[Guardar posición como la mejor]
+    M -->|No| P[Continuar probando posiciones]
+
+    O --> P
+    P --> Q{¿Se probaron todas las posiciones?}
+
+    Q -->|No| I
+    Q -->|Sí| R{¿Existe una posición válida?}
+
+    R -->|Sí| S[Colocar palabra en el tablero]
+    S --> H
+
+    R -->|No| H
+
+    N --> T[Guardar palabras, pistas y hash]
+    T --> U[Usuario resuelve el crucigrama]
+    U --> V[Obtener respuesta ingresada]
+    V --> W[Generar hash de la respuesta]
+
+    W --> X{¿El hash coincide con el almacenado?}
+
+    X -->|No| Y[Marcar respuesta como incorrecta]
+    Y --> U
+
+    X -->|Sí| Z[Marcar respuesta como correcta]
+    Z --> AA{¿Todas las respuestas fueron correctas?}
+
+    AA -->|No| U
+    AA -->|Sí| AB[Mostrar crucigrama resuelto]
+    AB --> AC([Fin])
+```
