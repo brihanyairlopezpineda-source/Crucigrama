@@ -242,7 +242,7 @@ function HashWord(Word) {
     return Hash;
 }
 ```
-## Diagrama de Flujo CrucigramaGreedy. 
+## Diagrama de Flujo: CrucigramaGreedy. 
 
 ```mermaid
 flowchart TD
