@@ -1,21 +1,21 @@
 ## 1. Nombre de la aplicación
 
-**Generador de Crucigramas**
+**CrucigramaGreedy**
 
 ## 2. Requerimientos para ejecutarlo
 
 La aplicación está desarrollada en **Python 3** y utiliza las siguientes librerías y herramientas:
 
 * **Python 3:** lenguaje utilizado para desarrollar la aplicación.
-* 
+  
 * **Pillow (PIL):** librería utilizada para generar la imagen con la solución del crucigrama.
-* 
+  
 * **JSON:** módulo incluido en Python para trabajar con datos en formato JSON.
-* 
+  
 * **Navegador web:** se necesita Google Chrome, Microsoft Edge, Mozilla Firefox o cualquier navegador moderno para abrir el archivo HTML generado.
-* 
+  
 * **Sistema operativo:** Windows, Linux o macOS.
-* 
+  
 * **Instalación de Pillow:** ejecutar el siguiente comando en la terminal:
 
 ```bash
