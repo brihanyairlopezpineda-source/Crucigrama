@@ -1,8 +1,8 @@
-# 1. Nombre de la aplicación
+## 1. Nombre de la aplicación
 
 **Generador de Crucigramas**
 
-# 2. Requerimientos para ejecutarlo
+## 2. Requerimientos para ejecutarlo
 
 La aplicación está desarrollada en **Python 3** y utiliza las siguientes librerías y herramientas:
 
@@ -21,6 +21,7 @@ La aplicación está desarrollada en **Python 3** y utiliza las siguientes libre
 ```bash
 pip install Pillow
 ```
+## 3. Algoritmo
 
 ## 1. El algoritmo de la aplicación funciona creando un crucigrama de manera automática a partir de las palabras y pistas que proporciona el usuario.
 
