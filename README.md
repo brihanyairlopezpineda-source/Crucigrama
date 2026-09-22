@@ -1,18 +1,26 @@
-# Crucigrama
-Programa que genera crucigramas automáticamente a partir de palabras y pistas proporcionadas por el usuario.
+# 1. Nombre de la aplicación
 
-1. El algoritmo de la aplicación funciona creando un crucigrama de manera automática a partir de las palabras y pistas que proporciona el usuario.
-2. Primero, el programa guarda las palabras y las ordena de mayor a menor según su longitud.
-3. Después, crea un tablero vacío y coloca la primera palabra de forma horizontal en el centro.
-4. Para colocar las siguientes palabras, el algoritmo busca letras que coincidan con las palabras que ya están en el tablero y prueba diferentes posiciones para cruzarlas.
-5. Antes de colocar una palabra, verifica que no se salga del tablero, que las letras que coinciden sean iguales y que no quede pegada incorrectamente a otras palabras.
-6. Cuando encuentra varias posiciones posibles, selecciona la que tenga el mayor número de intersecciones, por lo que utiliza un algoritmo voraz (Greedy).
-7. Finalmente, las palabras se guardan en el tablero y el programa genera una página HTML interactiva donde el usuario puede resolver el crucigrama y verificar sus respuestas mediante una función de hash.
+**Generador de Crucigramas**
 
+# 2. Requerimientos para ejecutarlo
 
-# Crucigrama
+La aplicación está desarrollada en **Python 3** y utiliza las siguientes librerías y herramientas:
 
-Programa que genera crucigramas automáticamente a partir de palabras y pistas proporcionadas por el usuario.
+* **Python 3:** lenguaje utilizado para desarrollar la aplicación.
+* 
+* **Pillow (PIL):** librería utilizada para generar la imagen con la solución del crucigrama.
+* 
+* **JSON:** módulo incluido en Python para trabajar con datos en formato JSON.
+* 
+* **Navegador web:** se necesita Google Chrome, Microsoft Edge, Mozilla Firefox o cualquier navegador moderno para abrir el archivo HTML generado.
+* 
+* **Sistema operativo:** Windows, Linux o macOS.
+* 
+* **Instalación de Pillow:** ejecutar el siguiente comando en la terminal:
+
+```bash
+pip install Pillow
+```
 
 ## 1. El algoritmo de la aplicación funciona creando un crucigrama de manera automática a partir de las palabras y pistas que proporciona el usuario.
 
